@@ -1,0 +1,200 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #222;
+  --card: white;
+  --button: #222;
+  --button-hover: #444;
+  --todo: #ffe0e0;
+  --progress: #fff8cc;
+  --done: #d9fdd3;
+}
+
+body.dark {
+  --bg: #181818;
+  --text: #e0e0e0;
+  --card: #252525;
+  --button: #444;
+  --button-hover: #666;
+  --todo: #4c2c2c;
+  --progress: #4b4a2e;
+  --done: #2f4c2f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.toggle-container {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.form-section {
+  background: var(--card);
+  padding: 25px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, textarea, select {
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background-color: #f9f9f9;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  background: white;
+  border-color: #555;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  font-size: 15px;
+  background-color: var(--button);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  min-width: 300px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.column h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+#todoList {
+  background: var(--todo);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#progressList {
+  background: var(--progress);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#doneList {
+  background: var(--done);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bug {
+  background: var(--card);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
+}
+
+.bug:hover {
+  transform: scale(1.015);
+}
+
+.bug strong {
+  font-size: 15.5px;
+}
+
+.bug button {
+  font-size: 12px;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 6px;
+  background-color: #e57373;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: background 0.3s;
+}
+
+.bug button:hover {
+  background-color: #c62828;
+}

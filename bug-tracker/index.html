@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🪲 Bug Tracker</h1>
+
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="darkToggle" onclick="toggleDarkMode()">
+      <span class="slider round"></span>
+    </label>
+    <span>🌙 Dark Mode</span>
+  </div>
+
+  <section class="form-section">
+    <input type="text" id="bugTitle" placeholder="Bug Title" />
+    <textarea id="bugDesc" placeholder="Bug Description"></textarea>
+    <select id="bugStatus">
+      <option value="To Do">To Do</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Done">Done</option>
+    </select>
+    <button onclick="addBug()">Add Bug</button>
+  </section>
+
+  <section class="board">
+    <div class="column">
+      <h2>📝 To Do</h2>
+      <div id="todoList" class="bug-list"></div>
+    </div>
+    <div class="column">
+      <h2>🚧 In Progress</h2>
+      <div id="progressList" class="bug-list"></div>
+    </div>
+    <div class="column">
+      <h2>✅ Done</h2>
+      <div id="doneList" class="bug-list"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
